@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Rubik";
+    src: local("../../fonts/Rubik/Rubik-VariableFont_wght.ttf"), 
+        url("../../fonts/Rubik/Rubik-VariableFont_wght.ttf") format("truetype");
+    font-weight: 300 900;
+    font-style: normal;
+} 
+
+@font-face {
+    font-family: "Rubik";
+    src: local("../../fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf"), 
+        url("../../fonts/Rubik/Rubik-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: 300 900;
+    font-style: italic;
+} 
+
+@font-face {
+    font-family: "Fredoka";
+    src: local("../../fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf"), 
+        url("../../fonts/Fredoka/Fredoka-VariableFont_wdth,wght.ttf") format("truetype");
+    font-weight: 300 700;
+    font-style: normal;
+} 
+
+@font-face {
+    font-family: "Amatic";
+    src: local("../../fonts/Amatic_SC/AmaticSC-Regular.ttf"), 
+        url("../../fonts/Amatic_SC/AmaticSC-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+} 
+
+@font-face {
+    font-family: "Amatic";
+    src: local("../../fonts/Amatic_SC/AmaticSC-Bold.ttf"), 
+        url("../../fonts/Amatic_SC/AmaticSC-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+} 
