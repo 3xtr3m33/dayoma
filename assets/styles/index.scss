@@ -265,12 +265,10 @@ html {
             position: relative;
             width: 100%;
             height: 100vh;
-            background-image: url('../../images/PHOTO-2022-05-12-17-29-36.JPG');
+            background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('../../images/PHOTO-2022-05-12-17-29-36.JPG');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            // background-color: rgba(76, 76, 76, 0.8);
-            // background-blend-mode: multiply;
 
             .custom-container{
                 position: absolute;
@@ -283,7 +281,7 @@ html {
                 filter: unset;
 
                 h1.title{
-                    font-size: max(24px, 7vw);
+                    font-size: max(48px, 7vw);
                     text-align: center;
                     color: $white;
                     text-shadow: 2px 3px 5px #002d33;
@@ -304,16 +302,21 @@ html {
             .custom-container{
                 max-width: 80vw;
                 margin: 0 auto;
-                padding-top: max(50px, 5vw);
+                padding-block: max(50px, 5vw);
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
+                @media only screen and (max-width: 1200px) {
+                    max-width: 85vw;
+                }
+
                 h2.title{
-                    font-size: max(36px, 4.5vw);
+                    font-size: max(48px, 4.5vw);
                     line-height: 1;
                     color: $primary;
-                    margin-bottom: 1vw;
+                    margin-bottom: max(30px, 1vw);
+                    text-align: center;
                 }
 
                 h3.sub-title{
@@ -414,7 +417,7 @@ html {
                     .content{
                         flex-direction: row-reverse;
 
-                        @media only screen and (max-width: 990px) {
+                        @media only screen and (max-width: 992px) {
                             flex-direction: column;
                             row-gap: 40px;
                         }
@@ -428,38 +431,50 @@ html {
 
                 @media only screen and (max-width: 768px) {
                     height: auto;
+                    padding-bottom: 3vh;
                 }
 
                 .custom-container{
                     max-width: 60vw;
                     height: 100%;
 
-                    @media only screen and (max-width: 1034px) {
-                        max-width: 85vw;
+                    @media only screen and (max-width: 768px) {
+                        max-width: 100%;
                     }
-                    
 
                     h2.title{
                         color: $white;
                         text-align: center;
                     }
                     .g-content{
-                       
+
                         .text-wrapper{
                             color: $white;
                         }
 
-                        .splide__slide{
-                            img{
-                                max-height: 60vh;
-                                width: 100%;
-                                object-fit: cover;
-                                object-position: center;
-                                border-radius: 15px;
+                        .splide__list{
+                            @media only screen and (max-width: 768px) {
+                                column-gap: 5%;
                             }
+
+                            .splide__slide{
+                                @media only screen and (max-width: 768px) {
+                                    width: 80% !important;
+                                }
+                            
+                                img{
+                                    height: 50vh;
+                                    width: 100%;
+                                    object-fit: cover;
+                                    object-position: center;
+                                    border-radius: 15px;
+                                }
+                            }
+
                         }
 
                         .splide__arrows{
+    
                             .splide__arrow{
                                 background: transparent;
                                 width: unset;
@@ -490,15 +505,12 @@ html {
                         }
 
                         .splide__pagination{
-                            bottom: -1.5vw;
+                            bottom: -5vh;
+                            transform: unset;
 
                             button{
-                                // width: 12px;
-                                // height: 12px;
-
                                 &.is-active{
-                                    opacity: 1;
-    
+                                    opacity: 1; 
                                 }
                             }
                         }
@@ -509,6 +521,7 @@ html {
             &.contact-us{
                 .custom-container{
                     padding-bottom: max(50px, 5vw);
+
                     .content{
                         column-gap: 5%;
 
@@ -519,19 +532,22 @@ html {
                             -webkit-box-shadow: 0px 3px 15px 8px rgba(0, 45, 51, 0.3); 
                             box-shadow: 0px 3px 15px 8px rgba(0, 45, 51,0.3);
 
-                            @media only screen and (max-width: 990px) {
+                            @media only screen and (max-width: 992px) {
                                 width: 100%;
                             }
 
                             iframe{
                                 width: 100% !important;
 
+                                @media only screen and (max-width: 768px) {
+                                    height: 50vh !important;
+                                }
                             }
                         }
                         .info{
                             width: 40%;
 
-                            @media only screen and (max-width: 990px) {
+                            @media only screen and (max-width: 992px) {
                                 width: 100%;
                             }
 
@@ -600,13 +616,13 @@ html {
             display: flex;
             align-items: center;
             justify-content: center;
-            column-gap: 1.5vw;
+            column-gap: max(16px, 1.5vw);
 
             .social{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                column-gap: 1.5vw;
+                column-gap: max(16px, 1.5vw);
 
                 .icon{
                     border-radius: 50%;
@@ -616,9 +632,25 @@ html {
                     svg{
                         width: 40px;
                         aspect-ratio: 1;
+                        filter: contrast(70%);
 
-                        path.cls-2{
-                            fill: #fff;
+                        path{
+                    
+                        }
+
+                        &.wz_icon{
+                            background: #33ccff;
+                            border-radius: 50%;
+                            padding: 5px;
+                        }
+                    }
+
+                    &:hover{
+                        svg{    
+                            filter: contrast(100%);
+                            path{
+                                
+                            }
                         }
                     }
                 }

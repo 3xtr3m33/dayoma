@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
   AOS.init();
+  
   window.onscroll = function () {
-    document.body.scrollTop > 100 || document.documentElement.scrollTop > 100
-      ? document.querySelector('header').classList.add("scroll")
-      : document.querySelector('header').classList.remove("scroll");
+    const header_el = document.querySelector('header');
 
-    const sections = document.querySelectorAll("section.menu");
+    document.body.scrollTop > 80 || document.documentElement.scrollTop > 80
+      ? header_el.classList.add("scroll")
+      : header_el.querySelector('header').classList.remove("scroll");
+
+    const sections = document.querySelectorAll(".menu");
     sections.forEach((section) => {
       let viewport_div = section.querySelector('.viewport');
       if (isInViewport(viewport_div)) {
@@ -32,6 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
     perPage: 1,
     direction: 'rtl',
     pagination: false,
+    breakpoints: {
+      768: {
+        arrows: false
+      },
+    }
   });
 
   splide.mount();
