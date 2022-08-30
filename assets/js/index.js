@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
       let viewport_div = section.querySelector('.viewport');
       if (isInViewport(viewport_div)) {
         document.querySelectorAll('a[data-id]').forEach((a_el) => {
-          console.log(a_el);
           a_el.classList.remove('active');
         });
         
